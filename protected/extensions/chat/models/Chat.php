@@ -37,13 +37,13 @@ class Chat extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_name, date_create, message', 'required'),
+			array('user_id, date_create, message', 'required'),
 			array('message', 'length', 'max'=>100, 'message' => 'Too long message!'),
                         array('message', 'length', 'min'=>3, 'message' => 'Too short message!'),
                         array('message', 'length', 'allowEmpty'=>false, 'message' => 'Message can not be empty!' ),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('pk_chat_id, user_name, date_create, message', 'safe', 'on'=>'search'),
+			array('pk_chat_id, user_id, date_create, message', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,7 +65,7 @@ class Chat extends CActiveRecord
 	{
 		return array(
 			'pk_chat_id' => 'Pk Chat',
-			'user_name' => 'User',
+			'user_id' => 'User',
 			'date_create' => 'Date Create',
 			'message' => 'Message',
 		);
@@ -83,7 +83,7 @@ class Chat extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('pk_chat_id',$this->pk_chat_id);
-		$criteria->compare('user_name',$this->user_name);
+		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('date_create',$this->date_create,true);
 		$criteria->compare('message',$this->message,true);
 

@@ -12,14 +12,12 @@
             if($this->cssFile===null)
                 $this->cssFile=$assetsDir.'/css/chat_style.css';
            $cs->registerCssFile(($this->cssFile));
-           $js1 = $assetsDir.'/js/jquery-1.9.1.js';
-           $js2 = $assetsDir.'/js/jquery-ui.js';
-           $js3 = $assetsDir.'/js/chat_script.js';
-           $js4 = $assetsDir.'/js/chatCls.js';
+           $js1 = $assetsDir.'/js/jquery-ui.js';
+           $js2 = $assetsDir.'/js/chat_script.js';
+           $js3 = $assetsDir.'/js/chatCls.js';
            $cs->registerScriptFile($js1, CClientScript::POS_END);
-           $cs->registerScriptFile($js2, CClientScript::POS_END);
-           $cs->registerScriptFile($js4, CClientScript::POS_END);
            $cs->registerScriptFile($js3, CClientScript::POS_END);
+           $cs->registerScriptFile($js2, CClientScript::POS_END);
             
            // parent::init();
         }

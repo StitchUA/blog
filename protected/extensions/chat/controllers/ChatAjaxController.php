@@ -11,7 +11,7 @@
             $msgs = $chatModel->findAll($criteria);
             $msgArr = array();
             foreach ($msgs as $index => $chObj) {
-                $uname = $chObj->user_name;// == 0? "Гость":$chObj->user_name;
+                $uname = $chObj->user_id == 0? "Guest": User::model()->findByPk($chObj->user_id)->username;//$chObj->user_name;
                 $msgArr[$index] = array(
                     'name' => $uname,
                     'date' => date("m.d.Y", strtotime($chObj->date_create)),
@@ -33,10 +33,10 @@
             $chatModel->date_create = date("Y-d-m h:i:s");//$dt->format("d-m-Y h:i:s");
             
             if(!$user->isGuest){
-                $chatModel->user_name = $user->getName();
+                $chatModel->user_id = $user->getId();
             }
             else{
-                $chatModel->user_name = "Guest";
+                $chatModel->user_id = 0;
             }
             $chatModel->message = htmlspecialchars(addslashes(trim($_POST['chat_msg'])));//Yii::app()->request->getParam("chat_msg");
             
