@@ -16,10 +16,14 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'ext.chat.models.*',
 	),
 
 	'defaultController'=>'post',
-
+    
+        'controllerMap' => array(
+            'chatAjax' => 'ext.chat.controllers.ChatAjaxController'
+        ),
 	// application components
 	'components'=>array(
 		'user'=>array(
