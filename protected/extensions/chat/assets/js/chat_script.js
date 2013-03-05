@@ -37,7 +37,7 @@ function ChatAjaxParse(data, textStatus, jqXHR){
     if(textStatus == "success"){
         if(typeof(data) == 'string')
             data = $.parseJSON(data);
-        if(data.res != 'undefined' && data.res == 1){
+        if(data.res != 'undefined' && data.res == 1 || data.res == 0){
             ChatAjaxUpdate();
             $("#chat-message").val("");
             return;
