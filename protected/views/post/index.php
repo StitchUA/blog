@@ -7,3 +7,7 @@
 	'itemView'=>'_view',
 	'template'=>"{items}\n{pager}",
 )); ?>
+<?php
+    $this->widget("ext.chat.ChatWidget");
+
+?>

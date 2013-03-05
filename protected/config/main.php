@@ -16,10 +16,14 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'ext.chat.models.*',
 	),
 
 	'defaultController'=>'post',
-
+    
+        'controllerMap' => array(
+            'chatAjax' => 'ext.chat.controllers.ChatAjaxController'
+        ),
 	// application components
 	'components'=>array(
 		'user'=>array(
@@ -49,6 +53,9 @@ return array(
         		'post/<id:\d+>/<title:.*?>'=>'post/view',
         		'posts/<tag:.*?>'=>'post/index',
         		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                        'post/chatAjax/GetMessages' => 'chatAjax/GetMessages',
+                        'demos/blog/chatAjax/GetMessages' => 'chatAjax/GetMessages'
+                        
         	),
         ),
 		'log'=>array(

@@ -1,0 +1,81 @@
+/* 
+    Document   : chat_style
+    Created on : 02.03.2013, 14:08:30
+    Author     : Stitch
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#chat-main-container {
+    height: 343px;
+    position: absolute;
+    right: 10px;
+    top: 175px;
+    width: 403px;
+    z-index: 10;
+    overflow: hidden;
+    background: transparent;
+}
+#chat-main-container > #chat-hv{
+    position: absolute;
+    width: 402px;
+    height: 100%;
+    right: -378px;
+} 
+#chat-eject-button{
+    width: 20px;
+    height: 100%;
+    display: inline-block;
+    background-color: red;
+}
+.chat-container {
+  display: inline-block;
+  float: right;
+  height: 100%;
+  width: 376px;
+  background-color: ghostwhite;
+}
+.chat-msg {
+  overflow: hidden;
+}
+.chat-field-container {
+    height: 275px;
+    width: 375px;
+    background-color: ghostwhite;
+    overflow :  auto;
+}
+#chat-message{
+    width: 315px;
+    height: 100%;
+}
+.chat-msg-container {
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+.chat-time, .chat-date, .chat-uname{
+    display: inline;
+}
+.chat-time{
+    float: right;
+    padding-right: 4px;
+}
+.chat-date{
+    margin-left: 5px;
+}
+.chat-new-message-container form input{
+    bottom: 1px;
+    position: absolute;
+    right: 5px;
+    border-top: 1px black solid;
+}
+.chat-textarea {
+  height: 67px;
+  overflow: hidden;
+  width: 260px;
+  border-top-color: darkgrey;
+}
+.chat-new-message-container {
+  height: 90px;
+}
