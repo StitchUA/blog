@@ -1,0 +1,18 @@
+﻿	"Chat" виджет.
+
+Прменяемое программное обеспечение пр разработке:
+	- PHP 			Version 5.3.13
+	- Server API 	Apache/2.2.22
+	- MySQL			mysqlnd 5.0.8
+	- System 		Windows NT
+	- IDE			NetBeans 7.3
+	
+Интеграция виджета в существующее приложение.
+	1. Скопировать папку chat/ в appdirectory/protected/extensoins/
+	2. В главный конфигурационный файл appdirectory/protected/config/main.php добавить следующее:
+		- 'controllerMap' => array(
+            'chatAjax' => 'ext.chat.controllers.ChatAjaxController'
+			)
+		- в массив ключа 'import' добавить: 'ext.chat.models.*'
+	3.  Интеграция в demos/blog:
+		- в demos/blog/protected/config/main.php раздел 'urlManager' подраздел 'rules' добавить - 'post/(index.php/)?chatAjax/GetMessages' => 'chatAjax/GetMessages'

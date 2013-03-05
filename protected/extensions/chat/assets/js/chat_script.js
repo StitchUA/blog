@@ -54,7 +54,7 @@ function ChatAjaxParse(data, textStatus, jqXHR){
  * Call every time when need update messages in widget
  */
 function ChatAjaxUpdate(){
-    var url = "/demos/blog/index.php/chatAjax/GetMessages";
+    var url = "index.php/chatAjax/GetMessages";
     $.ajax({
         type: "POST",
         dataType : "json",

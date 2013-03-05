@@ -53,7 +53,7 @@ return array(
         		'post/<id:\d+>/<title:.*?>'=>'post/view',
         		'posts/<tag:.*?>'=>'post/index',
         		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                        'post/chatAjax/GetMessages' => 'chatAjax/GetMessages'
+                        'post/(index.php/)?chatAjax/GetMessages' => 'chatAjax/GetMessages'
                         
         	),
         ),
