@@ -16,7 +16,7 @@
                         ?>
                     </div>
                     <?php echo CHtml::ajaxSubmitButton("Отправить", 
-                            $owner->createUrl('chatAjax/Add'),
+                            $owner->createUrl('chatAjax/add'),
                             array('success' => "ChatAjaxParse", 
                                 )
                             ); 
