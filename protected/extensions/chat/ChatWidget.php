@@ -11,6 +11,7 @@
             $cs = Yii::app()->getClientScript();
             if($this->cssFile===null)
                 $this->cssFile=$assetsDir.'/css/chat_style.css';
+            //Including javascripts and css.
            $cs->registerCssFile(($this->cssFile));
            $js1 = $assetsDir.'/js/jquery-ui.js';
            $js2 = $assetsDir.'/js/chat_script.js';
@@ -23,6 +24,7 @@
         }
         public function run() {
             $o = $this->owner;
+            // Rendering template of widget
             $this->render("body", array("owner" => $o));
             //parent::run();
         }
